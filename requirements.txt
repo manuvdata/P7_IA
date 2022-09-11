@@ -1,10 +1,11 @@
-absl-py==1.2.0
+absl-py==0.15.0
 asgiref==3.5.2
 astunparse==1.6.3
 
-cachetools==5.2.0
+cachetools==4.2.4
 certifi==2022.6.15.1
 charset-normalizer==2.1.1
+clang==5.0
 click==8.1.3
 colorama==0.4.5
 dj-database-url==1.0.0
@@ -12,7 +13,7 @@ Django==4.1.1
 django-heroku==0.3.1
 djangorestframework==3.13.1
 filelock==3.8.0
-flatbuffers==2.0.7
+flatbuffers==1.12
 gast==0.4.0
 gdown==4.5.1
 
@@ -24,16 +25,15 @@ idna==3.3
 importlib-metadata==4.12.0
 joblib==1.1.0
 
-
 libclang==14.0.6
 Markdown==3.4.1
 MarkupSafe==2.1.1
 
-numpy==1.23.3
+numpy==1.19.5
 oauthlib==3.2.1
 opt-einsum==3.3.0
 packaging==21.3
-
+pandas==1.4.4
 protobuf==3.19.4
 psycopg2==2.9.3
 pyasn1==0.4.8
@@ -47,23 +47,24 @@ regex==2022.8.17
 requests==2.28.1
 requests-oauthlib==1.3.1
 rsa==4.9
-six==1.16.0
+six==1.15.0
 soupsieve==2.3.2.post1
 sqlparse==0.4.2
-tensorboard==2.10.0
+tensorboard==2.6.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
-tensorflow-cpu==2.10.0
-tensorflow-estimator==2.10.0
+tensorflow==2.6.4
+tensorflow-estimator==2.6.0
 tensorflow-io-gcs-filesystem==0.27.0
+tensorflow_intel==2.10.0
 termcolor==1.1.0
 tokenizers==0.12.1
 tqdm==4.64.1
 transformers==4.21.3
-typing_extensions==4.3.0
+typing-extensions==3.10.0.2
 tzdata==2022.2
 urllib3==1.26.12
 Werkzeug==2.2.2
 whitenoise==6.2.0
-wrapt==1.14.1
+wrapt==1.12.1
 zipp==3.8.1

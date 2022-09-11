@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-woybmpcz5y1!kv=n@agl_-(!mx&(x5s=_y6m&6-bd_5b$2lst8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://apip7ev.herokuapp.com/' ]
-
+# ALLOWED_HOSTS =ip fr ['https://apip7ev.herokuapp.com/' ]
+ALLOWED_HOSTS = [ ]
 
 # Application definition
 
@@ -78,18 +78,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'APIProject.wsgi.application'
 
-DATABASES = {
-    'default': dj_database_url.config()
-}
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-#  }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+ }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql', 
