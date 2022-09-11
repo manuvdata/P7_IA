@@ -11,9 +11,9 @@ import re
 import unicodedata
 # import nltk
 # from nltk.corpus import stopwords
-from keras.models import Model
+#from keras.models import Model
 import tensorflow as tf
-from keras.utils import np_utils
+#from keras.utils import np_utils
 import numpy as np
 
 # Create your views here.
