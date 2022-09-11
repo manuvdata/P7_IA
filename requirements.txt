@@ -25,8 +25,7 @@ huggingface-hub==0.9.1
 idna==3.3
 importlib-metadata==4.12.0
 joblib==1.1.0
-keras==2.10.0
-Keras-Preprocessing==1.1.2
+
 libclang==14.0.6
 Markdown==3.4.1
 MarkupSafe==2.1.1
