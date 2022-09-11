@@ -50,10 +50,10 @@ requests==2.28.1
 
 
 
-tensorflow==2.6.4
+tensorflow==2.9.0
 
 termcolor==1.1.0
-tokenizers==0.12.1
+tokenizers==0.12.1pip 
 tqdm==4.64.1
 transformers==4.21.3
 typing-extensions==3.10.0.2
