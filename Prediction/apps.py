@@ -1,5 +1,4 @@
 from django.apps import AppConfig
-import pandas as pd
 from joblib import load
 import os
 from transformers import BertTokenizer, TFBertModel, BertConfig, BertForSequenceClassification, BertForTokenClassification
