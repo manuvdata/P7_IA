@@ -1,1 +1,1 @@
-python-3.10.7.t
+python-3.10.7
