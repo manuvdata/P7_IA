@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from unittest.mock import DEFAULT
+import django_heroku
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-woybmpcz5y1!kv=n@agl_-(!mx&(x5s=_y6m&6-bd_5b$2lst8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -49,9 +53,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'APIProject.urls'
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 TEMPLATES = [
     {
@@ -71,7 +78,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'APIProject.wsgi.application'
 
-
+DATABASES = {
+    'default': dj_database_url.config()
+}
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -80,23 +89,23 @@ WSGI_APPLICATION = 'APIProject.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
+#  }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         # 'NAME': 'APIP7',
+#         # 'USER': 'root',
+#         # 'PASSWORD': '',
+#         # 'HOST': 'localhost',
+#         'NAME': 'BADBUZZ$manu',
+#         'USER': 'BADBUZZ',
+#         'PASSWORD': 'P7iaev2022',
+#         'HOST': 'BADBUZZ.mysql.pythonanywhere-services.com',        
+
+
+#         'PORT': 3306,
+#     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        # 'NAME': 'APIP7',
-        # 'USER': 'root',
-        # 'PASSWORD': '',
-        # 'HOST': 'localhost',
-        'NAME': 'BADBUZZ$manu',
-        'USER': 'BADBUZZ',
-        'PASSWORD': 'P7iaev2022',
-        'HOST': 'BADBUZZ.mysql.pythonanywhere-services.com',        
-
-
-        'PORT': 3306,
-    }
-}
 
 
 # Password validation
@@ -133,9 +142,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
+STATICFILES_DIRS =['static']
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
